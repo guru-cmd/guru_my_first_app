@@ -3,3 +3,13 @@ language: generic
 services:
   - docker
 
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  region: "ap-south-1"	
+  app: "static-app-testing"
+  env: "Staticapptesting-env"
+  bucket_name: "guru-staticapp-to-be-deleted"
+  on:
+    branch: testing 
